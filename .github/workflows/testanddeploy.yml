@@ -3,13 +3,14 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    - name: Get Code from repository
-      uses: actions/checkout@v4
-    - name: Setup NodeJS
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
-    - name: Install dependecies
-      run: npm ci
-    - name: Run tests
-      run: npm test
+    steps:
+      - name: Get Code from repository
+        uses: actions/checkout@v4
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependecies
+        run: npm ci
+      - name: Run tests
+        run: npm test
