@@ -28,3 +28,15 @@ jobs:
         with:
           name: dist-files
           path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Build Artifacts
+        uses: actions/download-artifacts@v4
+        with:
+          name: dist-files
+      - name: Confirm the output of dist-files
+        run: ls
+      - name: Deploy the app
+        run: echo "Deploying . . ." 
