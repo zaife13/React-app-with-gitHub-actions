@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Build Artifacts
-        uses: actions/download-artifacts@v4
+        uses: actions/download-artifact@v4
         with:
           name: dist-files
       - name: Confirm the output of dist-files
